@@ -2,6 +2,7 @@ import chibicc
 import bfish
 import umka
 import utf8
+import yxml
 import sys
 
 
@@ -16,7 +17,8 @@ if __name__ == '__main__':
         chibicc.ChibiccLauncher,
         bfish.BfishLauncher,
         umka.UmkaLauncher,
-        utf8.Utf8Launcher
+        utf8.Utf8Launcher,
+        yxml.YxmlLauncher
     ]
     for test in tests:
         site = test(cc)
