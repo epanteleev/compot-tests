@@ -34,5 +34,6 @@ if __name__ == '__main__':
         sys.exit(1)
 
     cc = sys.argv[1]
-    utf8 = YxmlLauncher(cc)
-    utf8.build_and_run()
+    yxml = YxmlLauncher(cc)
+    yxml.clean()
+    yxml.build_and_run()
