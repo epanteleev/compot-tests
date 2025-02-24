@@ -35,4 +35,5 @@ if __name__ == '__main__':
 
     cc = sys.argv[1]
     utf8 = Utf8Launcher(cc)
+    utf8.clean()
     utf8.build_and_run()

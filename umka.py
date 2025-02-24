@@ -47,4 +47,5 @@ if __name__ == '__main__':
 
     cc = sys.argv[1]
     umka = UmkaLauncher(cc)
+    umka.clean()
     umka.build_and_run()

@@ -1,8 +1,11 @@
+#!/usr/bin/env python3
+
 import chibicc
 import bfish
 import umka
 import utf8
 import yxml
+import mpc
 import sys
 
 
@@ -18,7 +21,8 @@ if __name__ == '__main__':
         bfish.BfishLauncher,
         umka.UmkaLauncher,
         utf8.Utf8Launcher,
-        yxml.YxmlLauncher
+        yxml.YxmlLauncher,
+        mpc.MpcLauncher
     ]
     for test in tests:
         site = test(cc)

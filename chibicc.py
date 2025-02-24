@@ -35,4 +35,5 @@ if __name__ == '__main__':
 
     cc = sys.argv[1]
     chibicc = ChibiccLauncher(cc)
+    chibicc.clean()
     chibicc.build_and_run()
