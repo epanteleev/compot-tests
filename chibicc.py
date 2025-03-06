@@ -13,7 +13,7 @@ class ChibiccLauncher:
         sp.run(["CC={} make -C chibicc".format(self.compiler)], shell=True)
 
     def run(self):
-        completed_process = sp.run(["CC={} make -C chibicc".format(self.compiler), "test"], shell=True)
+        completed_process = sp.run(["make -C chibicc test".format(self.compiler)], shell=True)
         if completed_process.returncode == 0:
             print("Chibicc tests successful")
         else:
