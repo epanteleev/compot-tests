@@ -6,6 +6,8 @@ import umka
 import utf8
 import yxml
 import mpc
+import lua
+
 import sys
 
 
@@ -22,7 +24,8 @@ if __name__ == '__main__':
         umka.UmkaLauncher,
         utf8.Utf8Launcher,
         yxml.YxmlLauncher,
-        mpc.MpcLauncher
+        lua.LuaLauncher,
+        mpc.MpcLauncher,
     ]
     for test in tests:
         site = test(cc)

@@ -13,8 +13,14 @@ class LuaLauncher:
 
     def run(self):
         os.chdir("lua/testes")
-        sp.run(['../lua -e"_U=true" all.lua'], shell=True)
+        completed_process = sp.run(['../lua -e"_U=true" all.lua'], shell=True)
         os.chdir("../..")
+
+        if completed_process.returncode == 0:
+            print("Lua tests successful")
+        else:
+            print("Lua tests failed")
+            exit(1)
 
     def build_and_run(self):
         self.build()
