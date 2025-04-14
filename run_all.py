@@ -7,6 +7,7 @@ import utf8
 import yxml
 import mpc
 import lua
+import cczlib
 
 import sys
 
@@ -25,9 +26,16 @@ if __name__ == '__main__':
         utf8.Utf8Launcher,
         yxml.YxmlLauncher,
         lua.LuaLauncher,
+        cczlib.ZlibLauncher,
         mpc.MpcLauncher,
     ]
     for test in tests:
         site = test(cc)
         site.clean()
         site.build_and_run()
+        
+        print("-----------------------------------")
+        print("|")
+        print("|")
+        print("-----------------------------------")
+
