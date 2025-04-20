@@ -77,7 +77,7 @@ MYLIBS= -ldl
 
 
 CC?= gcc
-CFLAGS= -Wall $(MYCFLAGS) -fno-stack-protector -fno-common -march=native
+CFLAGS= -Wall -O3 $(MYCFLAGS) -fno-stack-protector -fno-common -march=native
 AR= ar rc
 RANLIB= ranlib
 RM= rm -f

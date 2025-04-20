@@ -9,6 +9,7 @@ import mpc
 import lua
 import cczlib
 import jsonc
+import png
 
 import sys
 
@@ -29,6 +30,7 @@ if __name__ == '__main__':
         lua.LuaLauncher,
         cczlib.ZlibLauncher,
         jsonc.JsoncLauncher,
+        png.PngLauncher,
         mpc.MpcLauncher,
     ]
     for test in tests:

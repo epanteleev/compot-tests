@@ -11,7 +11,7 @@ class ZlibLauncher:
 
     def build(self):
         os.chdir("zlib")
-        sp.run(["CC={} ./configure --static".format(self.compiler)], shell=True)
+        sp.run(["CC={} CFLAGS=-O3 ./configure --static".format(self.compiler)], shell=True)
         sp.run(["CC={} make".format(self.compiler)], shell=True)
         os.chdir("..")
 

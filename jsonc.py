@@ -14,7 +14,7 @@ class JsoncLauncher:
         os.chdir("json-c")
         os.mkdir("build")
         os.chdir("build")
-        sp.run(["CC={} cmake -DBUILD_SHARED_LIBS=false -DCMAKE_BUILD_TYPE=release ..".format(self.compiler)], shell=True)
+        sp.run(["CC={} cmake -DCMAKE_C_FLAGS=-O3 -DBUILD_SHARED_LIBS=false -DCMAKE_BUILD_TYPE=release ..".format(self.compiler)], shell=True)
         sp.run(["make"], shell=True)
         os.chdir("../..")
 
