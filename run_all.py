@@ -8,6 +8,7 @@ import yxml
 import mpc
 import lua
 import cczlib
+import jsonc
 
 import sys
 
@@ -27,6 +28,7 @@ if __name__ == '__main__':
         yxml.YxmlLauncher,
         lua.LuaLauncher,
         cczlib.ZlibLauncher,
+        jsonc.JsoncLauncher,
         mpc.MpcLauncher,
     ]
     for test in tests:
