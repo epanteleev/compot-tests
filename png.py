@@ -12,7 +12,7 @@ class PngLauncher:
 
     def build(self):
         os.chdir("libpng")
-        sp.run(["CC={} CFLAGS=-O3 ./configure --enable-shared=no".format(self.compiler)], shell=True)
+        sp.run(["CC={} CFLAGS=-O3 ./configure".format(self.compiler)], shell=True)
         sp.run(["make"], shell=True)
         os.chdir("..")
 
