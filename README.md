@@ -13,3 +13,9 @@ This repository contains the set of C language libraries or applications to test
 - [utf8.c](https://github.com/zahash/utf8.c) - Simple C library for working with UTF-8 encoded strings
 - [yxml](https://github.com/JulStrat/yxml) - Small XML parser written in C.
 - [zlib](https://github.com/madler/zlib) - General purpose data compression library
+
+## Enviroment
+Install following packages (Ubuntu):
+```shell
+sudo apt install build-essentials cmake zlib1g-dev python
+```
