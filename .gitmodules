@@ -6,3 +6,7 @@
 	path = libxml2
 	url = https://github.com/GNOME/libxml2.git
 	branch = master
+[submodule "umka-lang"]
+	path = umka-lang
+	url = https://github.com/vtereshkov/umka-lang.git
+	branch = master

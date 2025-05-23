@@ -6,7 +6,9 @@ import subprocess as sp
 
 expected_output = """21754 / 23019 bytes
 OK
-412 / 412 bytes
+"""
+
+excepted_output_bench = """412 / 412 bytes
 OK
 """
 
@@ -16,17 +18,45 @@ class UmkaLauncher:
 
     def build(self):
         os.chdir("umka-lang")
-        sp.run(["CC={} ./build_linux.sh".format(self.compiler)], shell=True)
+        sp.run(["CC={} make".format(self.compiler)], shell=True)
         os.chdir("..")
 
     def run(self):
-        os.chdir("umka-lang")
-        result = sp.run(["./test_linux.sh"], shell=True, stdout=sp.PIPE)
+        self.run_tests()
+        self.run_benchmarks()
+
+    def run_tests(self):
+        os.chdir("umka-lang/tests")
+        
+        # Build the library
+        os.chdir("lib")
+        sp.run(["./build_lib_linux.sh"], shell=True)
         os.chdir("..")
+
+        # Run the tests
+        sp.run(["../build/umka -warn all.um > actual.log"], shell=True)
+        # Check the output
+        result = sp.run(["../build/umka -warn compare.um actual.log expected.log"], shell=True, capture_output=True)
+
+        os.chdir("../..")
         if result.stdout.decode() == expected_output:
             print("Umka tests successful")
         else:
             print("Umka tests failed")
+            print("'" + result.stdout.decode() + "'")
+            exit(1)
+
+    def run_benchmarks(self):
+        os.chdir("umka-lang/benchmarks")
+        sp.run(["../build/umka -warn allbench.um > actual.log"], shell=True)
+        # Check the output
+        result = sp.run(["../build/umka -warn ../tests/compare.um actual.log expected.log"], shell=True, capture_output=True)
+
+        os.chdir("../..")
+        if result.stdout.decode() == excepted_output_bench:
+            print("Umka benchmarks successful")
+        else:
+            print("Umka benchmarks failed")
             print("'" + result.stdout.decode() + "'")
             exit(1)
 

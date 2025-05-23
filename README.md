@@ -19,3 +19,9 @@ Install following packages (Ubuntu):
 ```shell
 sudo apt install build-essentials cmake zlib1g-dev python
 ```
+
+## How to run?
+Run all available tests:  
+```shell
+python3 run_all.py <compiler-executable>
+```
