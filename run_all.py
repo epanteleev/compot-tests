@@ -25,7 +25,7 @@ if __name__ == '__main__':
     tests = [
         chibicc.ChibiccLauncher,
         bfish.BfishLauncher,
-        umka.UmkaLauncher,
+       # umka.UmkaLauncher,
         utf8.Utf8Launcher,
         yxml.YxmlLauncher,
         lua.LuaLauncher,

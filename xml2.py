@@ -14,7 +14,7 @@ class Xml2Launcher:
         os.chdir("libxml2")
         os.mkdir("build")
         os.chdir("build")
-        sp.run(["CC={} cmake -DCMAKE_C_FLAGS=-O3 -DBUILD_SHARED_LIBS=OFF -DLIBXML2_WITH_THREADS=OFF -DCMAKE_BUILD_TYPE=release ..".format(self.compiler)], shell=True)
+        sp.run(["CC={} cmake -DCMAKE_C_FLAGS=\"-O3 -DNO_LARGEFILE_SOURCE\" -DBUILD_SHARED_LIBS=OFF -DLIBXML2_WITH_THREADS=OFF -DLIBXML2_WITH_PYTHON=OFF -DCMAKE_BUILD_TYPE=release ..".format(self.compiler)], shell=True)
         sp.run(["make"], shell=True)
         os.chdir("../..")
 
