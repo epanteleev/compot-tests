@@ -11,6 +11,7 @@ import cczlib
 import jsonc
 import png
 import xml2
+import jpeg
 
 import sys
 
@@ -33,6 +34,7 @@ if __name__ == '__main__':
         jsonc.JsoncLauncher,
         png.PngLauncher,
         xml2.Xml2Launcher,
+        jpeg.JpegLauncher,
         mpc.MpcLauncher,
     ]
     for test in tests:
