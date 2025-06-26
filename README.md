@@ -17,7 +17,7 @@ This repository contains the set of C language libraries or applications to test
 ## Enviroment
 Install following packages (Ubuntu):
 ```shell
-sudo apt install build-essentials cmake zlib1g-dev python
+sudo apt install build-essential cmake zlib1g-dev python
 ```
 
 ## How to run?
